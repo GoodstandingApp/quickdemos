@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Standing - Your Impact, Rewarded</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Covered+By+Your+Grace&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: linear-gradient(180deg, 
+                #c8e6c9 0%, 
+                #f8f9fa 15%,
+                #fff5f5 35%,
+                #fce4ec 60%,
+                #ffcccb 100%
+            );
+            min-height: 100vh;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(180deg, 
+                rgba(200, 230, 201, 0.4) 0%, 
+                rgba(248, 249, 250, 0.3) 20%,
+                rgba(255, 245, 245, 0.3) 50%,
+                rgba(252, 228, 236, 0.4) 80%,
+                rgba(255, 204, 203, 0.5) 100%
+            );
+        }
+
+        nav {
+            background: linear-gradient(90deg, #c8e6c9 0%, #ffe4e1 100%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 3px solid #2d5016;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 24px;
+            color: #4a7c59;
+        }
+
+        .btn-dark-green {
+            background: #1a3d0f;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-dark-green:hover {
+            background: #0f2508;
+            transform: translateY(-1px);
+        }
+
+        .hero-title {
+            font-size: 80px;
+            font-weight: 900;
+            color: #1a3d0f;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-size: 28px;
+            color: #333;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .card-green {
+            background: #d4f4dd;
+            border: 3px solid #4a7c59;
+            border-radius: 20px;
+            padding: 48px 32px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .card-green:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(74, 124, 89, 0.2);
+        }
+
+        .card-purple {
+            background: #e1d4f4;
+            border: 3px solid #6b4a7c;
+            border-radius: 20px;
+            padding: 48px 32px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .card-purple:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(107, 74, 124, 0.2);
+        }
+
+        .card-pink {
+            background: #ffd4e5;
+            border: 3px solid #d63384;
+            border-radius: 20px;
+            padding: 48px 32px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .card-pink:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(214, 51, 132, 0.2);
+        }
+
+        .card-title {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            color: #1a3d0f;
+        }
+
+        .card-purple .card-title {
+            color: #3d1a4a;
+        }
+
+        .card-pink .card-title {
+            color: #d63384;
+        }
+
+        .card-text {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 24px;
+        }
+
+        .btn-card-green {
+            background: #1a3d0f;
+            color: white;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-card-purple {
+            background: #3d1a4a;
+            color: white;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-card-pink {
+            background: #ff4d7d;
+            color: white;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .handwritten {
+            font-family: 'Covered By Your Grace', cursive;
+            font-size: 64px;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .handwritten .can-help {
+            color: #ff69b4;
+        }
+
+        .handwritten .need-help {
+            color: #ff69b4;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 900;
+            color: #1a3d0f;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .rewards-section {
+            background: linear-gradient(180deg, #d4f4dd 0%, #ffd4e5 100%);
+            padding: 80px 0;
+        }
+
+        .coupon-card {
+            background: white;
+            border: 3px solid #333;
+            border-radius: 16px;
+            padding: 0;
+            min-width: 340px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .coupon-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #ffc0cb 0%, #ffb6c1 100%);
+            border-bottom: 3px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coupon-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: #4a7c59;
+            border-radius: 50%;
+            border: 4px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            font-size: 24px;
+        }
+
+        .coupon-content {
+            padding: 24px;
+        }
+
+        .coupon-title {
+            font-size: 14px;
+            font-weight: 900;
+            color: #3d1a4a;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .coupon-location {
+            font-size: 14px;
+            color: #3d1a4a;
+            text-align: center;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .coupon-sponsor {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .sponsor-icon {
+            width: 40px;
+            height: 40px;
+            background: #1a3d0f;
+            border-radius: 8px;
+        }
+
+        .sponsor-text {
+            font-size: 12px;
+            font-weight: 700;
+            color: #1a3d0f;
+        }
+
+        .coupon-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            border: 2px solid #ff4d7d;
+            color: #ff4d7d;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .btn-offer {
+            background: #ff4d7d;
+            color: white;
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .scroll-container {
+            overflow: hidden;
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .scroll-content {
+            display: flex;
+            gap: 24px;
+            animation: scroll 40s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .scroll-content:hover {
+            animation-play-state: paused;
+        }
+
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(147, 112, 219, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            border: none;
+            color: white;
+            font-size: 24px;
+        }
+
+        .arrow-btn.left {
+            left: 20px;
+        }
+
+        .arrow-btn.right {
+            right: 20px;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #d4f4dd 0%, #ffd4e5 100%);
+            padding: 60px 0 20px;
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: 900;
+            color: #1a3d0f;
+            margin-bottom: 16px;
+        }
+
+        .footer-link {
+            color: #333;
+            font-size: 16px;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover {
+            color: #1a3d0f;
+        }
+
+        .newsletter-box {
+            background: white;
+            border: 3px solid #1a3d0f;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 0 24px 40px;
+        }
+
+        .newsletter-title {
+            font-size: 28px;
+            font-weight: 900;
+            color: #1a3d0f;
+            margin-bottom: 8px;
+        }
+
+        .newsletter-subtitle {
+            font-size: 28px;
+            font-weight: 900;
+            color: #1a3d0f;
+            margin-bottom: 24px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 16px 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .btn-submit {
+            background: #1a3d0f;
+            color: white;
+            padding: 16px 48px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .handwritten {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="logo">GS</div>
+            <div class="flex items-center gap-4">
+                <a href="#" class="hidden md:block text-black font-semibold text-base">DISCOVER</a>
+                <button class="btn-dark-green">Log In</button>
+                <button class="btn-dark-green">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="hero-title mb-8">
+                YOUR IMPACT, REWARDED.
+            </h1>
+            <p class="hero-subtitle max-w-4xl mx-auto">
+                Give help, get help, and unlock real-world rewards for doing good.
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Cards -->
+    <section class="px-6 py-12">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="card-green">
+                <h3 class="card-title">I CAN HELP</h3>
+                <p class="card-text">Find tasks that match your skills and help organizations near you.</p>
+                <button class="btn-card-green">Find Tasks</button>
+            </div>
+            <div class="card-purple">
+                <h3 class="card-title">I NEED HELP</h3>
+                <p class="card-text">Post a task and get the help you need, from volunteers near and far.</p>
+                <button class="btn-card-purple">Request Assistance</button>
+            </div>
+            <div class="card-pink">
+                <h3 class="card-title">GET COUPONS</h3>
+                <p class="card-text">Earn, buy and donate coupons from your favorite brands and organizations.</p>
+                <button class="btn-card-pink">Enter Marketplace</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="px-6 py-20">
+        <div class="max-w-5xl mx-auto">
+            <p class="handwritten">
+                <span style="color: #000;">Good Standing connects the people who</span>
+                <span class="can-help"> can help </span>
+                <span style="color: #000;">to the people who</span>
+                <span class="need-help"> need help.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Artist & Brand Section -->
+    <section class="px-6 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="section-title mb-6">
+                ARE YOU AN ARTIST OR BRAND<br>THAT WANTS TO MAKE AN IMPACT?
+            </h2>
+        </div>
+    </section>
+
+    <!-- Rewards Section -->
+    <section class="rewards-section">
+        <div class="text-center mb-12 px-6">
+            <h2 class="section-title mb-6">GET REWARDED FOR GIVING BACK</h2>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                Discover exclusive offers from sponsors who believe in doing good. Shop limited-time deals, redeem badges, and support causes through every purchase.
+            </p>
+        </div>
+        
+        <div class="scroll-container relative">
+            <button class="arrow-btn left">‹</button>
+            <button class="arrow-btn right">›</button>
+            <div class="scroll-content px-6">
+                <!-- Coupon 1 -->
+                <div class="coupon-card">
+                    <div class="coupon-image" style="background: linear-gradient(135deg, #ffd4b8 0%, #ffb6a1 100%);">
+                        <div class="coupon-badge">GS</div>
+                    </div>
+                    <div class="coupon-content">
+                        <h4 class="coupon-title">$25 GIFT CARD TO PRESS CAFE</h4>
+                        <p class="coupon-location">Brooklyn, New York</p>
+                        <div class="coupon-sponsor">
+                            <div class="sponsor-icon"></div>
+                            <div class="sponsor-text">SPONSORED BY GOOD STANDING</div>
+                        </div>
+                        <div class="coupon-tags">
+                            <span class="tag">Zero Hunger</span>
+                            <span class="tag">Expires 8/31/23</span>
+                        </div>
+                        <button class="btn-offer">Offer Details</button>
+                    </div>
+                </div>
+
+                <!-- Coupon 2 -->
+                <div class="coupon-card">
+                    <div class="coupon-image" style="background: linear-gradient(135deg, #ffc0e0 0%, #ffb6d1 100%);">
+                        <div class="coupon-badge" style="background: #d63384;">GS</div>
+                    </div>
+                    <div class="coupon-content">
+                        <h4 class="coupon-title">2 TICKETS TO GREAT GATSBY ON BROADWAY</h4>
+                        <p class="coupon-location">New York City, New York</p>
+                        <div class="coupon-sponsor">
+                            <div class="sponsor-icon" style="background: #d63384;"></div>
+                            <div class="sponsor-text">SPONSORED BY GS GARDEN CENTER</div>
+                        </div>
+                        <div class="coupon-tags">
+                            <span class="tag">Literacy</span>
+                            <span class="tag">Expires 4/30/23</span>
+                            <span class="tag">Limited Quantity</span>
+                        </div>
+                        <button class="btn-offer">Offer Details</button>
+                    </div>
+                </div>
+
+                <!-- Coupon 3 -->
+                <div class="coupon-card">
+                    <div class="coupon-image" style="background: linear-gradient(135deg, #c0ffd4 0%, #b6ffca 100%);">
+                        <div class="coupon-badge">GS</div>
+                    </div>
+                    <div class="coupon-content">
+                        <h4 class="coupon-title">1 MONTH MEMBERSHIP TO LIFETIME FITNESS</h4>
+                        <p class="coupon-location">Nationwide</p>
+                        <div class="coupon-sponsor">
+                            <div class="sponsor-icon"></div>
+                            <div class="sponsor-text">SPONSORED BY LIFETIME FITNESS</div>
+                        </div>
+                        <div class="coupon-tags">
+                            <span class="tag">Health/Well Being</span>
+                            <span class="tag">Expires 4/30/23</span>
+                            <span class="tag">Trending 🔥</span>
+                        </div>
+                        <button class="btn-offer">Offer Details</button>
+                    </div>
+                </div>
+
+                <!-- Duplicate for infinite scroll -->
+                <div class="coupon-card">
+                    <div class="coupon-image" style="background: linear-gradient(135deg, #ffd4b8 0%, #ffb6a1 100%);">
+                        <div class="coupon-badge">GS</div>
+                    </div>
+                    <div class="coupon-content">
+                        <h4 class="coupon-title">$25 GIFT CARD TO PRESS CAFE</h4>
+                        <p class="coupon-location">Brooklyn, New York</p>
+                        <div class="coupon-sponsor">
+                            <div class="sponsor-icon"></div>
+                            <div class="sponsor-text">SPONSORED BY GOOD STANDING</div>
+                        </div>
+                        <div class="coupon-tags">
+                            <span class="tag">Zero Hunger</span>
+                            <span class="tag">Expires 8/31/23</span>
+                        </div>
+                        <button class="btn-offer">Offer Details</button>
+                    </div>
+                </div>
+
+                <div class="coupon-card">
+                    <div class="coupon-image" style="background: linear-gradient(135deg, #ffc0e0 0%, #ffb6d1 100%);">
+                        <div class="coupon-badge" style="background: #d63384;">GS</div>
+                    </div>
+                    <div class="coupon-content">
+                        <h4 class="coupon-title">2 TICKETS TO GREAT GATSBY ON BROADWAY</h4>
+                        <p class="coupon-location">New York City, New York</p>
+                        <div class="coupon-sponsor">
+                            <div class="sponsor-icon" style="background: #d63384;"></div>
+                            <div class="sponsor-text">SPONSORED BY GS GARDEN CENTER</div>
+                        </div>
+                        <div class="coupon-tags">
+                            <span class="tag">Literacy</span>
+                            <span class="tag">Expires 4/30/23</span>
+                            <span class="tag">Limited Quantity</span>
+                        </div>
+                        <button class="btn-offer">Offer Details</button>
+                    </div>
+                </div>
+
+                <div class="coupon-card">
+                    <div class="coupon-image" style="background: linear-gradient(135deg, #c0ffd4 0%, #b6ffca 100%);">
+                        <div class="coupon-badge">GS</div>
+                    </div>
+                    <div class="coupon-content">
+                        <h4 class="coupon-title">1 MONTH MEMBERSHIP TO LIFETIME FITNESS</h4>
+                        <p class="coupon-location">Nationwide</p>
+                        <div class="coupon-sponsor">
+                            <div class="sponsor-icon"></div>
+                            <div class="sponsor-text">SPONSORED BY LIFETIME FITNESS</div>
+                        </div>
+                        <div class="coupon-tags">
+                            <span class="tag">Health/Well Being</span>
+                            <span class="tag">Expires 4/30/23</span>
+                            <span class="tag">Trending 🔥</span>
+                        </div>
+                        <button class="btn-offer">Offer Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div class="newsletter-box max-w-6xl mx-auto">
+        <h3 class="newsletter-title">SIGN UP FOR NEWS & UPDATES</h3>
+        <p class="newsletter-subtitle">DELIVERED STRAIGHT TO YOUR INBOX</p>
+        <div class="flex gap-4">
+            <input type="email" class="newsletter-input" placeholder="Email">
+            <button class="btn-submit">SUBMIT</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+                <div>
+                    <div class="logo mb-6">GS</div>
+                </div>
+                <div>
+                    <h4 class="footer-title">PLATFORM</h4>
+                    <a href="#" class="footer-link">Coupons</a>
+                    <a href="#" class="footer-link">Tasks</a>
+                    <a href="#" class="footer-link">Campaigns</a>
+                    <a href="#" class="footer-link">Challenges</a>
+                    <a href="#" class="footer-link">Badges</a>
+                </div>
+                <div>
+                    <h4 class="footer-title">JOIN GS</h4>
+                    <a href="#" class="footer-link">Volunteers</a>
+                    <a href="#" class="footer-link">Ambassadors</a>
+                    <a href="#" class="footer-link">Artists</a>
+                    <a href="#" class="footer-link">Organizations</a>
+                    <a href="#" class="footer-link">Brands</a>
+                </div>
+                <div>
+                    <h4 class="footer-title">SUPPORT</h4>
+                    <a href="#" class="footer-link">Glossary</a>
+                    <a href="#" class="footer-link">Community Guidelines</a>
+                    <a href="#" class="footer-link">Terms of Use</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Accessibility</a>
+                </div>
+                <div>
+                    <h4 class="footer-title">COMPANY</h4>
+                    <a href="#" class="footer-link">About Good Standing</a>
+                    <a href="#" class="footer-link">Archive & Prompt</a>
+                    <a href="#" class="footer-link">Good Standing Podcast</a>
+                    <a href="#" class="footer-link">Contact</a>
+                </div>
+            </div>
+            <div class="text-center py-6 border-t border-gray-300">
+                <p class="text-sm text-gray-600">© 2025 Good Standing. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll controls
+        const scrollContent = document.querySelector('.scroll-content');
+        const leftBtn = document.querySelector('.arrow-btn.left');
+        const rightBtn = document.querySelector('.arrow-btn.right');
+
+        leftBtn.addEventListener('click', () => {
+            scrollContent.scrollBy({ left: -400, behavior: 'smooth' });
+        });
+
+        rightBtn.addEventListener('click', () => {
+            scrollContent.scrollBy({ left: 400, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
