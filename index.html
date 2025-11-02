@@ -44,15 +44,15 @@
         .logo {
             width: 50px;
             height: 50px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 3px solid #2d5016;
-            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 900;
-            font-size: 24px;
-            color: #4a7c59;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .btn-dark-green {
@@ -241,15 +241,19 @@
             transform: translate(-50%, -50%);
             width: 80px;
             height: 80px;
-            background: #4a7c59;
+            background: white;
             border-radius: 50%;
             border: 4px solid white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 900;
-            color: white;
-            font-size: 24px;
+            padding: 8px;
+        }
+
+        .coupon-badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .coupon-content {
@@ -454,7 +458,9 @@
     <!-- Navigation -->
     <nav class="sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="logo">GS</div>
+            <div class="logo">
+                <img src="./logo/logo.svg" alt="Good Standing Logo">
+            </div>
             <div class="flex items-center gap-4">
                 <a href="#" class="hidden md:block text-black font-semibold text-base">DISCOVER</a>
                 <button class="btn-dark-green">Log In</button>
@@ -533,7 +539,9 @@
                 <!-- Coupon 1 -->
                 <div class="coupon-card">
                     <div class="coupon-image" style="background: linear-gradient(135deg, #ffd4b8 0%, #ffb6a1 100%);">
-                        <div class="coupon-badge">GS</div>
+                        <div class="coupon-badge">
+                            <img src="./logo/logo.svg" alt="GS">
+                        </div>
                     </div>
                     <div class="coupon-content">
                         <h4 class="coupon-title">$25 GIFT CARD TO PRESS CAFE</h4>
@@ -553,7 +561,9 @@
                 <!-- Coupon 2 -->
                 <div class="coupon-card">
                     <div class="coupon-image" style="background: linear-gradient(135deg, #ffc0e0 0%, #ffb6d1 100%);">
-                        <div class="coupon-badge" style="background: #d63384;">GS</div>
+                        <div class="coupon-badge">
+                            <img src="./logo/logo.svg" alt="GS">
+                        </div>
                     </div>
                     <div class="coupon-content">
                         <h4 class="coupon-title">2 TICKETS TO GREAT GATSBY ON BROADWAY</h4>
@@ -574,7 +584,9 @@
                 <!-- Coupon 3 -->
                 <div class="coupon-card">
                     <div class="coupon-image" style="background: linear-gradient(135deg, #c0ffd4 0%, #b6ffca 100%);">
-                        <div class="coupon-badge">GS</div>
+                        <div class="coupon-badge">
+                            <img src="./logo/logo.svg" alt="GS">
+                        </div>
                     </div>
                     <div class="coupon-content">
                         <h4 class="coupon-title">1 MONTH MEMBERSHIP TO LIFETIME FITNESS</h4>
